@@ -1,3 +1,3 @@
 # Personal Portfolio 2024
 
-This is my personal portfolio website for jobs usage.
+This is my personal portfolio website
