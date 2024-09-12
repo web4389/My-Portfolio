@@ -1,18 +1,42 @@
 import React, { useState } from "react";
+import "../css/navbar.css";
+import { Link } from "react-scroll";
+import { useDarkMode } from "../components/DarkModeContext";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { darkMode, setDarkMode } = useDarkMode();
 
   return (
-    <header className="bg-transparent px-12 max-md:px-0 mt-2 w-[100%] absolute top-0 z-10">
-      <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a href="/" className="text-xl font-semibold text-gray-800">
+    <header
+      className={`bg-transparent md:px-12 max-md:px-0 overflow-hidden pt-2 w-[100%] absolute top-0 z-10`}
+    >
+      <nav
+        className={`container mx-auto px-6 py-3 flex justify-between items-center`}
+      >
+        <motion.a
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.2, delay: 0 }}
+          href="/"
+          className={`text-xl font-semibold ${
+            darkMode ? "text-white" : "text-gray-800"
+          } `}
+        >
           Robert
-        </a>
-        <div className="flex min-[901px]:hidden hover:cursor-pointer">
+        </motion.a>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.2, delay: 0.3 }}
+          className="flex min-[901px]:hidden hover:cursor-pointer"
+        >
           <a
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-800 focus:outline-none"
+            className={`${
+              darkMode ? "text-white" : "text-gray-800"
+            }  focus:outline-none`}
           >
             <svg
               fill="none"
@@ -37,48 +61,86 @@ const Navbar = () => {
               )}
             </svg>
           </a>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: 0.3 }}
           className={`${
             isOpen
-              ? "flex bg-[#252a30] text-white py-4"
-              : "hidden text-gray-600"
-          } max-[900px]:absolute max-[900px]:items-center max-[900px]:flex-col max-[900px]:top-full max-[900px]:left-0 max-[900px]:w-full max-[900px]:shadow-md min-[900px]:static min-[901px]:flex min-[900px]:flex-row min-[900px]:space-x-4 min-[900px]:shadow-none`}
+              ? `flex shadow-2xl ${
+                  darkMode
+                    ? "text-white bg-[#212121]"
+                    : "bg-white text-gray-800"
+                }  py-4`
+              : `hidden ${darkMode ? "text-white" : "bg-white text-gray-600"} `
+          } max-[900px]:fixed max-[900px]:items-center max-[900px]:flex-col max-[900px]:top-[55px] max-[900px]:left-0 max-[900px]:w-full max-[900px]:shadow-md min-[901px]:static min-[901px]:flex min-[901px]:flex-row min-[901px]:space-x-4 min-[901px]:shadow-none`}
+          id="links"
         >
-          <a
-            href="#home"
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent"
+          <Link
+            to="heroSection"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
           >
             Home
-          </a>
-          <a
-            href="#about"
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent"
+          </Link>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
           >
             About
-          </a>
-          <a
-            href="#services"
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent"
+          </Link>
+
+          <Link
+            to="services"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
           >
             Services
-          </a>
-          <a
-            href="#portfolio"
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent"
+          </Link>
+          <Link
+            to="skill"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
           >
-            Portfolio
-          </a>
-          <a
-            href="#contact"
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent"
+            Skills
+          </Link>
+          <Link
+            to="project"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
           >
-            Contact
-          </a>
-        </div>
-        <button className="bg-[#252a30] font-medium  text-white px-6 py-2 rounded-full hover:bg-orange-500 transition duration-300 max-[900px]:hidden">
-          Contact
-        </button>
+            Projects
+          </Link>
+          <div className="py-3">
+            <input
+              type="checkbox"
+              className="theme-checkbox min-[901px]:hidden"
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+            />
+          </div>
+        </motion.div>
+        <motion.input
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.2, delay: 0.6 }}
+          type="checkbox"
+          className="theme-checkbox max-[900px]:hidden"
+          checked={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        />
       </nav>
     </header>
   );
