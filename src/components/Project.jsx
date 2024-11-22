@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import MyPic from "../images/MyPicForFirstSection.png";
+import FindNewsMockUp from "../images/FindNewsMockup.png";
+import SocialMediaMockup from "../images/SocialMediaMockup.png";
+import TeslaMockup from "../images/TeslaMockup.png";
 import { useDarkMode } from "../components/DarkModeContext";
 import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "IN MY FEELINGS",
+    title: "Find News",
     description:
-      "A journal and quiz app that selects a Drake album to play for the user based on input about their mood. Albums come from the Lastfm.com API.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
+      "This is a News App in which i get news from my own data and then i display that news with my graphic designing skill through Reactjs and Tailwind css",
+    technologies: ["React", "Tailwind CSS"],
+    liveLink: "https://find-news-xi.vercel.app/",
+    githubLink: "https://github.com/web4389/Find-News",
+    image: FindNewsMockUp,
     rowDir: "md:flex-row",
     textDir: "text-start",
     itemDir: "items-start",
@@ -20,13 +22,13 @@ const projects = [
     x: "-100%",
   },
   {
-    title: "TO DO IN TO",
+    title: "Tesla",
     description:
-      "An event app that grabs entertainment events in Toronto from the Ticketmaster API for a user-selected date. Paired programming with JULIA DUFRESNE.",
-    technologies: ["HTML5", "Sass", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
+      "I used ReactJS and Tailwind CSS to create this Tesla Clone using the Tesla website design. As a result, I have gained a deep understanding of Reactjs and Tailwind CSS",
+    technologies: ["React", "Tailwind CSS", "ReduxJS"],
+    liveLink: "https://tesla-clone-three-pi.vercel.app/",
+    githubLink: "https://github.com/web4389/Tesla-Clone",
+    image: TeslaMockup,
     rowDir: "md:flex-row-reverse",
     textDir: "text-end",
     itemDir: "items-end",
@@ -35,64 +37,25 @@ const projects = [
     x: "100%",
   },
   {
-    title: "IN MY FEELINGS",
+    title: "Social Media App",
     description:
-      "A journal and quiz app that selects a Drake album to play for the user based on input about their mood. Albums come from the Lastfm.com API.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
+      "This is a social media app which I create for backend's Practice. From this, I have gained a much better understanding of backend functions like authentication, crud, pagination, and many more",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node JS",
+      "Express JS",
+      "MongoDB Atlas",
+    ],
+    liveLink: "https://social-media-by-shilok-kumar.vercel.app/",
+    githubLink: "https://github.com/web4389/Mingle-Space-Social-Media-Site-",
+    image: SocialMediaMockup,
     rowDir: "md:flex-row",
     textDir: "text-start",
     itemDir: "items-start",
     imgDir: "justify-end",
     skillDir: "justify-start",
     x: "-100%",
-  },
-  {
-    title: "TO DO IN TO",
-    description:
-      "An event app that grabs entertainment events in Toronto from the Ticketmaster API for a user-selected date. Paired programming with JULIA DUFRESNE.",
-    technologies: ["HTML5", "Sass", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
-    rowDir: "md:flex-row-reverse",
-    textDir: "text-end",
-    itemDir: "items-end",
-    imgDir: "justify-start",
-    skillDir: "justify-end",
-    x: "100%",
-  },
-  {
-    title: "IN MY FEELINGS",
-    description:
-      "A journal and quiz app that selects a Drake album to play for the user based on input about their mood. Albums come from the Lastfm.com API.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
-    rowDir: "md:flex-row",
-    textDir: "text-start",
-    itemDir: "items-start",
-    imgDir: "justify-end",
-    skillDir: "justify-start",
-    x: "-100%",
-  },
-  {
-    title: "TO DO IN TO",
-    description:
-      "An event app that grabs entertainment events in Toronto from the Ticketmaster API for a user-selected date. Paired programming with JULIA DUFRESNE.",
-    technologies: ["HTML5", "Sass", "JavaScript", "React", "API"],
-    liveLink: "#",
-    githubLink: "#",
-    image: MyPic, // Replace with actual image URL
-    rowDir: "md:flex-row-reverse",
-    textDir: "text-end",
-    itemDir: "items-end",
-    imgDir: "justify-start",
-    skillDir: "justify-end",
-    x: "100%",
   },
 ];
 
@@ -101,7 +64,7 @@ const ProjectSection = ({ Colors }) => {
 
   return (
     <div
-      className="max-lg:py-20 lg:py-36 text-center overflow-x-hidden"
+      className="max-lg:py-20 lg:py-36 text-center overflow-x-hidden font-poppins_Regular"
       id="project"
       style={Colors.bg}
     >
@@ -118,12 +81,9 @@ const ProjectSection = ({ Colors }) => {
         <h2 className="text-4xl font-bold text-gray-800" style={Colors.h1}>
           Projects
         </h2>
-        <p
-          className="text-lg max-sm:px-2 text-gray-700 opacity-95 mb-24 mt-4"
-          style={Colors.p}
-        >
-          The skills, tools, and technologies I use to bring your products to
-          life:
+        <p className="text-gray-700 sm:px-28 mb-16 mt-4 px-5" style={Colors.p}>
+          With these projects, I've gained a deeper understanding of both
+          Frontend and Backend development
         </p>
       </motion.div>
       <div className="grid grid-cols-1 gap-x-10 max-md:gap-y-20 md:gap-y-24 px-5 place-items-center">
@@ -149,12 +109,12 @@ const ProjectSection = ({ Colors }) => {
                 easings: "cubic-bezier(0.25, 1, 0.5, 1)",
               }}
               viewport={{ once: true }}
-              className={`flex w-[300px] max-sm:justify-center ${project.imgDir}`}
+              className={`flex max-[450px]:w-[300px] w-[400px] max-sm:justify-center ${project.imgDir}`}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-[300px] object-cover rounded-md shadow-lg"
+                className="w-[400px] max-[450px]:w-[300px] object-cover rounded-md"
               />
             </motion.div>
             <motion.div
@@ -193,6 +153,7 @@ const ProjectSection = ({ Colors }) => {
               <div className="flex justify-center md:justify-start space-x-4">
                 <a
                   href={project.liveLink}
+                  target="_blank"
                   className={`text-yellow-500 font-medium ${
                     darkMode ? "hover:text-white" : "hover:text-gray-700"
                   } hover:font-medium hover:!scale-110 transition duration-150`}
@@ -204,6 +165,7 @@ const ProjectSection = ({ Colors }) => {
                 </p>
                 <a
                   href={project.githubLink}
+                  target="_blank"
                   className={`text-yellow-500 font-medium ${
                     darkMode ? "hover:text-white" : "hover:text-gray-700"
                   } hover:font-medium hover:!scale-110 transition duration-150`}

@@ -3,49 +3,58 @@ import MyPic from "../images/MyPicForFirstSection.png";
 import { motion } from "framer-motion";
 import "../css/about.css";
 import { useDarkMode } from "../components/DarkModeContext";
+import Services from "./Services";
 
 const AboutMe = ({ Colors }) => {
   const { darkMode } = useDarkMode();
   return (
     <section
-      className="max-lg:py-20 lg:py-36 con overflow-hidden"
+      className="max-lg:py-20 lg:py-36 font-poppins_Regular"
       style={Colors.bg}
       id="about"
     >
-      <div className="w-[100%] mx-auto flex flex-col justify-center items-center lg:flex-row max-lg:gap-y-6 lg:gap-20">
-        <div className="max-md:w-[90%] flex justify-center">
-          <motion.img
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.2, ease: "linear", delay: 0 }}
-            src={MyPic}
-            alt="Profile"
-            className="rounded-full lg:w-[380px] max-lg:w-[320px]"
-          />
-        </div>
-
-        {/* About Me Content */}
+      <motion.div
+        className="text-center pb-28"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, ease: "linear" }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl font-bold mb-[19px]" style={Colors.h1}>
+          My Services
+        </h2>
+        <p className="mt-4" style={Colors.p}>
+          I’ve got everything you need to launch and grow your business
+        </p>
+      </motion.div>
+      {/* About Me Content */}
+      <div className=" max-lg:flex-col lg:px-12 flex lg:justify-between">
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "linear", delay: 0.5 }}
-          className="text-center lg:text-left max-sm:px-3 max-sm:w-auto max-lg:w-[65%] lg:max-w-[40%]"
+          className="text-center lg:text-left max-sm:px-3 max-sm:w-auto max-lg:w-[65%] lg:max-w-[45%] flex flex-col justify-center gap-y-[15px] pb-16"
         >
-          <h2 className="text-4xl font-bold mb-[19px]" style={Colors.h1}>
+          <h2 className="text-4xl font-bold" style={Colors.h1}>
             About Me
           </h2>
           <div className="opacity-90" style={Colors.p}>
             <p className="mt-4">
-              Hi, I'm Robert, a dedicated UI/UX designer with a passion for
-              creating digital experiences that not only look beautiful but also
-              function seamlessly.
+              I'm a Mern Stack Developer who builds and manages the Frontend &
+              Backend of Websites and Web Applications led to the success of the
+              overall product
             </p>
             <p className="mt-4">
-              My journey in the world of design started in 2013. Since then,
-              I've had the opportunity to work on a variety of projects ranging
-              from mobile apps to complex web interfaces.
+               My journey in the world of coding started in 2020. As of now, I
+              am learning coding and can make any kind of website, & can manage
+              both front-ends and backends. & Now I am fully prepared for any
+              job or any other opportunity.
+            </p>
+            <p className="mt-4">
+              I'm open to Job opportunities where I can contribute, learn and
+              grow. If you have a good opportunity that matches my skills and
+              experience then don't hesitate to contact me.
             </p>
           </div>
           <div className="flex items-center mt-6 gap-x-4 max-lg:justify-center">
@@ -153,6 +162,7 @@ const AboutMe = ({ Colors }) => {
             </div>
           </div>
         </motion.div>
+        <Services Colors={Colors} />
       </div>
     </section>
   );

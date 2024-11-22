@@ -27,7 +27,7 @@ const Footer = ({ Colors }) => {
   };
   return (
     <footer
-      className="bg-white py-10 pb-8 mt-10 sm:px-12 px-4 md:px-20 relative overflow-hidden"
+      className="bg-white py-10 pb-8 mt-10 sm:px-12 px-4 md:px-20 relative overflow-hidden font-poppins_Regular"
       style={Colors.bg}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
@@ -95,7 +95,7 @@ const Footer = ({ Colors }) => {
               style={Colors.p}
               className="mt-2"
             >
-              Phone: +123 456 7890
+              Whatsapp: 92+ 03269237649
             </motion.p>
             <motion.p
               initial={{ opacity: 0, x: 100 }}
@@ -109,7 +109,7 @@ const Footer = ({ Colors }) => {
               style={Colors.p}
               className="mt-1"
             >
-              Email: info@robert.com
+              Email: mernstack421@gmail.com
             </motion.p>
           </div>
 
@@ -258,7 +258,7 @@ const Footer = ({ Colors }) => {
         className="text-gray-500 opacity-75 text-center"
         style={Colors.ownOpacityPara}
       >
-        © 2023 Robert. All rights reserved.
+        © 2024 Shilok.K | All rights reserved
       </motion.p>
     </footer>
   );

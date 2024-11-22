@@ -9,10 +9,11 @@ import {
 } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiMongodb, SiExpress, SiGreensock } from "react-icons/si";
+import { SiMongodb, SiExpress, SiRedux } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandFramerMotion } from "react-icons/tb";
 import React from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useDarkMode } from "../components/DarkModeContext";
 
 const SkillsSection = ({ Colors }) => {
@@ -24,8 +25,12 @@ const SkillsSection = ({ Colors }) => {
     { name: "JavaScript", icon: <IoLogoJavascript /> },
     { name: "React", icon: <FaReact /> },
     {
-      name: "Gsap JS",
-      icon: <SiGreensock />,
+      name: "Framer Motion",
+      icon: <TbBrandFramerMotion />,
+    },
+    {
+      name: "Redux JS",
+      icon: <SiRedux />,
     },
     { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Express.js", icon: <SiExpress /> },
@@ -58,7 +63,7 @@ const SkillsSection = ({ Colors }) => {
 
   return (
     <div
-      className="max-lg:py-20 lg:py-36 overflow-hidden bg-white text-center max-md:px-2 px-10"
+      className="max-lg:py-20 lg:py-36 overflow-hidden bg-white text-center max-md:px-2 px-10 font-poppins_Regular"
       id="skill"
       style={Colors.bg}
     >
@@ -69,12 +74,9 @@ const SkillsSection = ({ Colors }) => {
         transition={{ duration: 0.5, ease: "linear" }}
       >
         <h2 className="text-4xl font-bold text-gray-800" style={Colors.h1}>
-          Favourite Skills
+          Skills
         </h2>
-        <p
-          className="text-lg text-gray-700 opacity-95 mb-16 mt-4"
-          style={Colors.p}
-        >
+        <p className="text-gray-700 mb-16 mt-4 px-5" style={Colors.p}>
           The skills, tools, and technologies I use to bring your products to
           life:
         </p>
@@ -138,7 +140,7 @@ const SkillsSection = ({ Colors }) => {
           className="mb-3 text-gray-700 max-sm:px-1"
           style={Colors.p}
         >
-          Improving my skills in React.js and Node.js
+          Currently, I am open to any opportunity
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: 100 }}
@@ -149,7 +151,7 @@ const SkillsSection = ({ Colors }) => {
             delay: 0.5,
             easings: "cubic-bezier(0.25, 1, 0.5, 1)",
           }}
-          className={`text-gray-600 opacity-70`}
+          className={`text-gray-600 opacity-90`}
           style={Colors.ownOpacityPara}
         >
           Follow My Journey From Here.

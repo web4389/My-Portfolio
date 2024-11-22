@@ -2,6 +2,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins_Regular: ["POPPINS-REGULAR"],
+      },
       colors: {
         orange: {
           500: "#f9c465",

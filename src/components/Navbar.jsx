@@ -3,14 +3,38 @@ import "../css/navbar.css";
 import { Link } from "react-scroll";
 import { useDarkMode } from "../components/DarkModeContext";
 import { motion } from "framer-motion";
+import Logo from "../images/Logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { darkMode, setDarkMode } = useDarkMode();
 
+  const Links = [
+    {
+      locationPathname: "heroSection",
+      Name: "Home",
+    },
+    {
+      locationPathname: "about",
+      Name: "About",
+    },
+    {
+      locationPathname: "skill",
+      Name: "Skills",
+    },
+    {
+      locationPathname: "project",
+      Name: "Projects",
+    },
+    {
+      locationPathname: "services",
+      Name: "Services",
+    },
+  ];
+
   return (
     <header
-      className={`bg-transparent md:px-12 max-md:px-0 overflow-hidden pt-2 w-[100%] absolute top-0 z-10`}
+      className={`bg-transparent md:px-12 max-md:px-0 overflow-hidden pt-2 w-[100%] max-[900px]:h-[100%] absolute top-0 z-10 font-poppins_Regular`}
     >
       <nav
         className={`container mx-auto px-6 py-3 flex justify-between items-center`}
@@ -18,18 +42,28 @@ const Navbar = () => {
         <motion.a
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2, delay: 0 }}
+          transition={{ duration: 0.2, delay: 3 }}
           href="/"
           className={`text-xl font-semibold ${
             darkMode ? "text-white" : "text-gray-800"
           } `}
         >
-          Robert
+          Shilok.K
         </motion.a>
+
+        {/* <motion.img
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+          src={Logo}
+          alt="Profile"
+          className="rounded-full w-[200px]"
+          id="MyPics"
+        /> */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2, delay: 0.3 }}
+          transition={{ duration: 0.2, delay: 3.3 }}
           className="flex min-[901px]:hidden hover:cursor-pointer"
         >
           <a
@@ -65,7 +99,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2, delay: 0.3 }}
+          transition={{ duration: 0.2, delay: 3.3 }}
           className={`${
             isOpen
               ? `flex shadow-2xl ${
@@ -74,55 +108,24 @@ const Navbar = () => {
                     : "bg-white text-gray-800"
                 }  py-4`
               : `hidden ${darkMode ? "text-white" : "bg-white text-gray-600"} `
-          } max-[900px]:fixed max-[900px]:items-center max-[900px]:flex-col max-[900px]:top-[55px] max-[900px]:left-0 max-[900px]:w-full max-[900px]:shadow-md min-[901px]:static min-[901px]:flex min-[901px]:flex-row min-[901px]:space-x-4 min-[901px]:shadow-none`}
+          } max-[900px]:absolute max-[900px]:items-center max-[900px]:flex-col max-[900px]:top-[55px] max-[900px]:left-0 max-[900px]:w-full max-[900px]:shadow-md min-[901px]:static min-[901px]:flex min-[901px]:flex-row min-[901px]:space-x-4 min-[901px]:shadow-none`}
           id="links"
         >
-          <Link
-            to="heroSection"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
-          >
-            Home
-          </Link>
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
-          >
-            About
-          </Link>
+          {Links.map((e) => {
+            return (
+              <Link
+                key={e.locationPathname}
+                to={e.locationPathname}
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={`px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer hover:font-medium hover:scale-110`}
+              >
+                {e.Name}
+              </Link>
+            );
+          })}
 
-          <Link
-            to="services"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
-          >
-            Services
-          </Link>
-          <Link
-            to="skill"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
-          >
-            Skills
-          </Link>
-          <Link
-            to="project"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="px-[11px] py-3 hover:text-orange-500 transition duration-300 min-[900px]:hover:bg-transparent cursor-pointer"
-          >
-            Projects
-          </Link>
           <div className="py-3">
             <input
               type="checkbox"
@@ -135,7 +138,7 @@ const Navbar = () => {
         <motion.input
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2, delay: 0.6 }}
+          transition={{ duration: 0.2, delay: 3.6 }}
           type="checkbox"
           className="theme-checkbox max-[900px]:hidden"
           checked={darkMode}

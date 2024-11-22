@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "POPPINS-REGULAR";
+  src: url(/public/Fonts/Poppins-Regular.ttf);
+}
+
 h1,
 h2,
 h3,
@@ -17,7 +22,7 @@ a {
 button {
   box-shadow: 5px 2px 20px 2px rgba(0, 0, 0, 0.205);
 }
-img {
+#MyPics {
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
     backdrop-filter;
@@ -28,10 +33,21 @@ img {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-img:hover {
+#MyPics:hover {
   box-shadow: 2.1px 2.6px 33.6px rgba(0, 0, 0, 0.052),
     5.9px 7.1px 52.4px rgba(0, 0, 0, 0.075),
     14.2px 17.2px 67.9px rgba(0, 0, 0, 0.098),
     47px 57px 80px rgba(0, 0, 0, 0.15);
   transform: scale(1.02) !important;
+}
+
+::-webkit-scrollbar {
+  width: 1.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444444;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  background-clip: content-box;
 }

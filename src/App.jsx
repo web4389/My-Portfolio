@@ -12,6 +12,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { useDarkMode } from "./components/DarkModeContext";
+import { ReactTyped } from "react-typed";
 
 function App() {
   const { darkMode } = useDarkMode();
@@ -85,6 +86,25 @@ function App() {
           </div>
         }
       >
+        <motion.div
+          className={`fixed top-0 left-0 z-50 w-full h-screen ${
+            darkMode ? "bg-zinc-900" : "bg-slate-50"
+          } origin-top text-3xl md:text-5xl font-bold ${
+            darkMode ? "text-white" : "text-gray-800"
+          }`}
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: 0 }}
+          exit={{ scaleY: 0 }}
+          transition={{ duration: 1, delay: 2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <ReactTyped
+            strings={["Welcome to my portfolio website ✨ "]}
+            typeSpeed={15}
+            backSpeed={15}
+            className="flex justify-center items-center h-screen px-6 text-center font-poppins_Regular"
+          />
+        </motion.div>
+
         <div style={darkMode ? ColorsDarkMode.bg : ColorsWhiteMode.bg}>
           <Navbar />
           <HeroSection />
@@ -113,7 +133,6 @@ function App() {
           </motion.div>
 
           <AboutMe Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
-          <Services Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
           <Skills Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
           <Projects Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
 

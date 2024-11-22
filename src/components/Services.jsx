@@ -11,21 +11,20 @@ const Services = ({ Colors }) => {
     {
       title: "Mern Stack",
       description:
-        "Experience the synergy of MERN Stack Development with our expertise. From MongoDB's flexibility to Express.js' streamlined backend, React's interactive frontend, and Node.js' scalable runtime – we weave a seamless, full-stack narrative. Elevate your project with a technology stack that harmonizes innovation and efficiency.",
+        "Experience the synergy of MERN Stack Development with our expertise.",
       icon: <FaReact />,
       x: "-100%",
     },
     {
       title: "Frontend Development",
       description:
-        "Embark on a journey of Frontend Development excellence with us. We sculpt dynamic and responsive user interfaces, marrying form with function. From pixel-perfect designs to seamless interactions, we code experiences that captivate and interfaces that resonate. Join us at the forefront of web innovation.",
+        "Embark on a journey of Frontend Development excellence with us.",
       icon: <SlScreenDesktop />,
       x: "100%",
     },
     {
       title: "Backend Development",
-      description:
-        "Dive into the robust world of Backend Development with us. Behind every seamless user experience lies a powerful and scalable backend architecture. We engineer data-driven solutions, ensuring your platform operates with efficiency and security. Let us shape the backbone of your digital ambitions, where innovation meets reliability.",
+      description: "Dive into the robust world of Backend Development with us.",
       icon: <FaNodeJs />,
       x: "-100%",
     },
@@ -33,7 +32,7 @@ const Services = ({ Colors }) => {
 
   return (
     <section
-      className="max-lg:py-20 lg:pt-36 lg:pb-20 bg-white overflow-hidden"
+      className="bg-white overflow-hidden font-poppins_Regular"
       id="services"
       style={Colors.bg}
     >
@@ -45,14 +44,11 @@ const Services = ({ Colors }) => {
           transition={{ duration: 0.5, ease: "linear" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold" style={Colors.h1}>
+          <h2 className="text-4xl font-bold pb-10" style={Colors.h1}>
             My Services
           </h2>
-          <p className="mt-4" style={Colors.p}>
-            I’ve got everything you need to launch and grow your business
-          </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-10 py-[60px] pb-[80px] overflow-x-hidden">
+        <div className="">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -60,11 +56,11 @@ const Services = ({ Colors }) => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`p-6 boxes ${
+              className={`${
                 darkMode
                   ? "hover:!bg-[#303030] bg-[#282828]"
                   : "hover:!bg-[#fff8f2] bg-[#f9f8f8]"
-              } hover:!scale-[1.03] transition rounded-lg shadow-lg hover:shadow-2xl duration-300 text-center `}
+              } hover:!scale-[1.01] transition rounded-lg duration-300 text-center`}
             >
               <div className="flex justify-center mb-4 text-[#feb12f] text-4xl">
                 {service.icon}
