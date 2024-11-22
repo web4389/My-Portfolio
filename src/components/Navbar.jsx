@@ -48,7 +48,7 @@ const Navbar = () => {
             darkMode ? "text-white" : "text-gray-800"
           } `}
         >
-          Shilok.K
+          Shilok
         </motion.a>
 
         {/* <motion.img
