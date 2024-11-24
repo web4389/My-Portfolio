@@ -1,7 +1,8 @@
-import React from "react";
 import "../css/heroSection.css";
 import { motion } from "framer-motion";
 import MyPic from "../images/MyPicForFirstSection.png";
+import Arrow from "../images/Arrow.png";
+import Design from "../images/Design.svg";
 import { useDarkMode } from "../components/DarkModeContext";
 import { useSpring, animated } from "react-spring";
 import { ReactTyped } from "react-typed";
@@ -23,12 +24,20 @@ const HeroSection = () => {
     <section
       className={`${
         darkMode ? "bg-[#212121] text-white" : "bg-white"
-      } max-md:py-[120px] md:py-[100px] flex justify-center items-end font-poppins_Regular`}
+      } max-md:py-[120px] md:pb-[100px] md:pt-[200px] flex justify-center items-end font-poppins_Regular`}
       id="heroSection"
-      style={{ minHeight: "80vh" }}
     >
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center max-lg:px-4 lg:px-20">
         <div className="text-center md:text-left md:w-1/2 gap-y-10 leading-[24px]">
+        <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+              src={Arrow}
+              alt="Arrow"
+              className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
+              id="Arrow"
+            />
           <motion.h1
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -37,7 +46,7 @@ const HeroSection = () => {
               darkMode ? "text-white" : "text-gray-800"
             } min-[1000px]:pr-16 min-[1100px]:pr-20 min-[1280px]:pr-44`}
           >
-            Hello, I'm <span className="text-orange-500">Shilok</span> a Web{" "}
+            Hello, I'm <span className="text-orange-500">Shilok</span> a Web
             <div>
               <ReactTyped
                 strings={["Developer", "Tester", "Optimizer"]}
@@ -82,6 +91,15 @@ const HeroSection = () => {
               alt="Profile"
               className="rounded-full xl:w-[380px] max-xl:w-[320px]"
               id="MyPics"
+            />
+                   <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+              src={Design}
+              alt="Design"
+              className={`md:w-[120px] max-md:w-[80px] fixed max-md:right-[10%] mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} md:right-[10%] max-md:-mt-[360px] md:-mt-[400px]`}
+              id="Design"
             />
             <motion.div
               initial={{ opacity: 0, x: 40 }}

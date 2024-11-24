@@ -21,25 +21,24 @@ const AboutMe = ({ Colors }) => {
         viewport={{ once: true }}
       >
         <h2 className="text-4xl font-bold mb-[19px]" style={Colors.h1}>
-          My Services
+        About Me
         </h2>
-        <p className="mt-4" style={Colors.p}>
-          I’ve got everything you need to launch and grow your business
+        <p className="mt-4 max-md:px-5 md:px-12 lg:px-20" style={Colors.p}>Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
         </p>
       </motion.div>
       {/* About Me Content */}
-      <div className=" max-lg:flex-col lg:px-12 flex lg:justify-between">
+      <div className=" max-lg:flex-col lg:px-12 flex gap-x-8 justify-center items-center lg:justify-between">
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "linear", delay: 0.5 }}
-          className="text-center lg:text-left max-sm:px-3 max-sm:w-auto max-lg:w-[65%] lg:max-w-[45%] flex flex-col justify-center gap-y-[15px] pb-16"
+          className="text-center lg:text-left max-sm:px-3 flex flex-col justify-center items-center gap-y-[15px] lg:w-[87%] pb-16"
         >
-          <h2 className="text-4xl font-bold" style={Colors.h1}>
-            About Me
+          <h2 className="text-3xl font-bold text-center" style={Colors.h1}>
+          Get to know me!
           </h2>
-          <div className="opacity-90" style={Colors.p}>
+          <div className="opacity-90 max-sm:w-auto max-lg:w-[65%] lg:max-w-[93%] text-center" style={Colors.p}>
             <p className="mt-4">
               I'm a Mern Stack Developer who builds and manages the Frontend &
               Backend of Websites and Web Applications led to the success of the

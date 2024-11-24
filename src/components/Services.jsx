@@ -36,7 +36,7 @@ const Services = ({ Colors }) => {
       id="services"
       style={Colors.bg}
     >
-      <div className="container mx-auto max-md:px-4 md:px-6">
+      <div className="mx-auto max-md:px-4">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, x: -100 }}
@@ -44,11 +44,11 @@ const Services = ({ Colors }) => {
           transition={{ duration: 0.5, ease: "linear" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold pb-10" style={Colors.h1}>
+          <h2 className="text-3xl font-bold pb-8" style={Colors.h1}>
             My Services
           </h2>
         </motion.div>
-        <div className="">
+        <div className="grid max-xl:grid-cols-1 xl:grid-cols-2 justify-center gap-y-5 items-center text-center">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -56,11 +56,7 @@ const Services = ({ Colors }) => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`${
-                darkMode
-                  ? "hover:!bg-[#303030] bg-[#282828]"
-                  : "hover:!bg-[#fff8f2] bg-[#f9f8f8]"
-              } hover:!scale-[1.01] transition rounded-lg duration-300 text-center`}
+              className={` hover:!scale-[1.01] transition rounded-lg duration-300 text-center p-6`}
             >
               <div className="flex justify-center mb-4 text-[#feb12f] text-4xl">
                 {service.icon}
@@ -69,7 +65,7 @@ const Services = ({ Colors }) => {
                 {service.title}
               </h3>
               <a
-                className={`text-gray-500 ${
+                className={`text-gray-500 text-center ${
                   darkMode ? "opacity-70" : "opacity-90"
                 }`}
                 style={Colors.ownOpacityPara}

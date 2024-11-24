@@ -12,7 +12,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiMongodb, SiExpress, SiRedux } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import React from "react";
+import Arrow from "../images/Arrow.png";
 import { motion } from "framer-motion";
 import { useDarkMode } from "../components/DarkModeContext";
 
@@ -76,6 +76,18 @@ const SkillsSection = ({ Colors }) => {
         <h2 className="text-4xl font-bold text-gray-800" style={Colors.h1}>
           Skills
         </h2>
+        {/* <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+              src={Arrow}
+              alt="Arrow"
+              className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
+              id="Arrow"
+            /> */}
+            <img src={Arrow} alt="Arrow"
+              className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
+              id="Arrow" />
         <p className="text-gray-700 mb-16 mt-4 px-5" style={Colors.p}>
           The skills, tools, and technologies I use to bring your products to
           life:
