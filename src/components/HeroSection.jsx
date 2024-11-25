@@ -65,7 +65,7 @@ const HeroSection = () => {
             } lg:max-w-[90%]`}
           >
             I build responsive, user-centric websites that perform flawlessly.
-            Let's bring your vision to life
+            Let's bring your vision to life!
           </motion.p>
           <motion.button
             initial={{ opacity: 0, x: 50 }}
