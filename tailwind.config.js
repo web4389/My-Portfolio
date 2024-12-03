@@ -4,6 +4,7 @@ export default {
     extend: {
       fontFamily: {
         poppins_Regular: ["POPPINS-REGULAR"],
+        Montserrat_Regular: ["Montserrat-Regular"],
       },
       colors: {
         orange: {

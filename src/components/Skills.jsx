@@ -63,7 +63,7 @@ const SkillsSection = ({ Colors }) => {
 
   return (
     <div
-      className="max-lg:py-20 lg:py-36 overflow-hidden bg-white text-center max-md:px-2 px-10 font-poppins_Regular"
+      className="max-lg:py-28 lg:py-36 overflow-hidden bg-white text-center max-md:px-2 px-10 font-poppins_Regular"
       id="skill"
       style={Colors.bg}
     >
@@ -73,21 +73,19 @@ const SkillsSection = ({ Colors }) => {
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "linear" }}
       >
-        <h2 className="text-4xl font-bold text-gray-800" style={Colors.h1}>
+        <h2 className="text-4xl font-bold text-gray-800 after:content-[''] after:absolute after:translate-x-[-50%] after:h-[5px] after:w-[2rem] after:left-[50%] after:mt-[3.2rem] after:rounded-[5px] pb-6 after:bg-orange-500" style={Colors.h1}>
           Skills
         </h2>
-        {/* <motion.img
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+              <motion.img
+               initial={{ opacity: 0, scale: 0 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+               transition={{ type: "spring", duration: 0.3, delay:0.3 }}
               src={Arrow}
               alt="Arrow"
-              className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
+              className="md:w-[70px] max-md:w-[50px] absolute max-md:right-[10%] md:ml-[53%] max-lg:-mt-[90px] lg:-mt-[100px]"
               id="Arrow"
-            /> */}
-            <img src={Arrow} alt="Arrow"
-              className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
-              id="Arrow" />
+            />
         <p className="text-gray-700 mb-16 mt-4 px-5" style={Colors.p}>
           The skills, tools, and technologies I use to bring your products to
           life:
@@ -108,16 +106,16 @@ const SkillsSection = ({ Colors }) => {
             viewport={{ once: true }}
             key={index}
             className={`flex flex-col items-center justify-center p-5 rounded-lg shadow-lg ${
-              darkMode ? "hover:!bg-[#303030]" : "hover:!bg-indigo-50"
+              darkMode ? "hover:!bg-[#fff] hover:!text-gray-800 text-white" : "hover:!bg-zinc-800 text-gray-800 hover:!text-white"
             } transition-all duration-300 ease-in-out`}
+
             whileHover={{ scale: 1.05 }}
             transition={{ stiffness: 300 }}
             style={Colors.boxesBg}
           >
             <div className="text-5xl text-orange-500">{skill.icon}</div>
             <h3
-              className="mt-4 text-lg font-semibold text-gray-800"
-              style={Colors.h1}
+              className="mt-4 text-lg font-semibold"
             >
               {skill.name}
             </h3>
@@ -135,7 +133,7 @@ const SkillsSection = ({ Colors }) => {
             delay: 0.3,
             easings: "cubic-bezier(0.25, 1, 0.5, 1)",
           }}
-          className="text-3xl font-semibold mb-4"
+          className="text-xl font-semibold mb-4 after:content-[''] after:absolute after:translate-x-[-50%] after:h-[5px] after:w-[2rem] after:left-[50%] after:mt-[2.5rem] after:rounded-[5px] pb-4 after:bg-orange-500"
           style={Colors.h1}
         >
           Currently working on
@@ -180,8 +178,8 @@ const SkillsSection = ({ Colors }) => {
               variants={item}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              href="https://linkedin.com/"
+          target="_blank"
+              viewport={{ once: true }}href="https://www.linkedin.com/in/shilok-k/"
             >
               <FaLinkedin className="hover:!scale-125 transition duration-300" />
             </motion.a>
@@ -189,8 +187,9 @@ const SkillsSection = ({ Colors }) => {
               variants={item}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              href="https://linkedin.com/"
+              viewport={{ once: true }}                    href="https://github.com/web4389"
+          target="_blank"
+
             >
               <FaGithub className="hover:!scale-125 transition duration-300" />
             </motion.a>

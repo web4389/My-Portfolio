@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../css/navbar.css";
 import { Link } from "react-scroll";
 import { useDarkMode } from "../components/DarkModeContext";
 import { motion } from "framer-motion";
-import Logo from "../images/Logo.png";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,22 +44,12 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, delay: 3 }}
           href="/"
-          className={`text-xl font-semibold ${
+          className={`text-xl font-semibold font-Montserrat_Regular ${
             darkMode ? "text-white" : "text-gray-800"
           } `}
         >
           Shilok.K
         </motion.a>
-
-        {/* <motion.img
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
-          src={Logo}
-          alt="Profile"
-          className="rounded-full w-[200px]"
-          id="MyPics"
-        /> */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}

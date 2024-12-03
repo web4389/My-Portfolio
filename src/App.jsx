@@ -135,6 +135,7 @@ function App() {
           <AboutMe Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
           <Skills Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
           <Projects Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
+          <Services Colors={darkMode ? ColorsDarkMode : ColorsWhiteMode} />
 
           <motion.div
             initial={{ opacity: 0, scale: 0 }}

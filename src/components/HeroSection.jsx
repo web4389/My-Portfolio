@@ -32,7 +32,7 @@ const HeroSection = () => {
         <motion.img
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
+              transition={{ type: "spring", duration: 0.3, delay: 4.7}}
               src={Arrow}
               alt="Arrow"
               className="md:w-[80px] max-md:w-[50px] fixed max-md:right-[10%] md:ml-[380px] md:-mt-[80px]"
@@ -73,11 +73,10 @@ const HeroSection = () => {
             transition={{ type: "spring", duration: 0.1, delay: 4.5 }}
             className={`${
               darkMode ? "bg-white text-gray-900" : "bg-[#252a30] text-white"
-            }  font-medium px-6 py-3 rounded-full hover:!scale-105 hover:bg-orange-500 transition duration-300`}
+            } font-medium px-6 py-3 rounded-full hover:!scale-105 hover:bg-orange-500 transition duration-300`}
           >
-            <a href="https://fiverr.com/" target="_blank">
-              Get Started
-            </a>
+            <a href="https://www.fiverr.com/createwebsite31?" target="_blank">
+              Get Started           </a>
           </motion.button>
         </div>
 
@@ -98,7 +97,7 @@ const HeroSection = () => {
               transition={{ type: "spring", duration: 0.3, delay: 4.7 }}
               src={Design}
               alt="Design"
-              className={`md:w-[120px] max-md:w-[80px] fixed max-md:right-[10%] mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} md:right-[10%] max-md:-mt-[360px] md:-mt-[400px]`}
+              className={`md:w-[120px] max-md:w-[80px] fixed max-md:right-[10%] mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} md:right-[12%] max-md:-mt-[360px] md:-mt-[400px]`}
               id="Design"
             />
             <motion.div

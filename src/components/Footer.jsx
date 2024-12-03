@@ -1,6 +1,7 @@
-import React from "react";
 import { useDarkMode } from "../components/DarkModeContext";
 import { motion } from "framer-motion";
+import Design from "../images/Design.svg";
+
 
 const Footer = ({ Colors }) => {
   const { darkMode } = useDarkMode();
@@ -27,11 +28,22 @@ const Footer = ({ Colors }) => {
   };
   return (
     <footer
-      className="bg-white py-10 pb-8 mt-10 sm:px-12 px-4 md:px-20 relative overflow-hidden font-poppins_Regular"
+      className="bg-white py-10 pb-8 mt-10 sm:px-12 px-4 md:px-20 relative overflow-hidden font-poppins_Regular pt-[80px]"
       style={Colors.bg}
     >
+   
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
-        <div className="flex justify-between items-center max-sm:flex-col max-sm:gap-y-4 max-sm:mb-10">
+      <motion.img
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+      transition={{ type: "spring", duration: 0.3, delay:0.3 }}
+              src={Design}
+              alt="Design"
+              className={`md:w-[110px] max-md:w-[80px] absolute mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} max-md:right-[10%] md:ml-[53%] max-lg:-mt-[55px] lg:-mt-[80px] `}
+              id="Design"
+            />
+        <div className="flex justify-between text-center items-center max-sm:flex-col max-sm:gap-y-4 max-sm:mb-10">
           <motion.h3
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,11 +53,13 @@ const Footer = ({ Colors }) => {
               delay: 0.5,
             }}
             viewport={{ once: true }}
-            className="text-4xl max-sm:text-3xl font-bold"
+            className="text-3xl max-sm:text-2xl font-bold text-center"
             style={Colors.h1}
           >
             Let's Work Together
           </motion.h3>
+          <a href="https://www.linkedin.com/in/shilok-k/" target="_blank">
+
           <motion.button
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -65,6 +79,8 @@ const Footer = ({ Colors }) => {
           >
             Let's Talk
           </motion.button>
+            </a>
+
         </div>
 
         <div className="flex md:flex-row max-md:flex-col justify-between gap-y-10 max-md:text-center">
@@ -143,8 +159,8 @@ const Footer = ({ Colors }) => {
                   viewport={{ once: true }}
                   className="icon-content"
                 >
-                  <a
-                    href="https://linkedin.com/"
+                  <a     href="https://www.linkedin.com/in/shilok-k/"
+          target="_blank"
                     aria-label="LinkedIn"
                     data-social="linkedin"
                     style={Colors.SocialMediaIcons}
@@ -174,8 +190,8 @@ const Footer = ({ Colors }) => {
                   viewport={{ once: true }}
                   className="icon-content"
                 >
-                  <a
-                    href="https://www.github.com/"
+                  <a     href="https://github.com/web4389"
+          target="_blank"
                     aria-label="GitHub"
                     data-social="github"
                     className={`${
@@ -212,7 +228,8 @@ const Footer = ({ Colors }) => {
                   className="icon-content"
                 >
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/codewithshilok9/"
+          target="_blank"
                     aria-label="Instagram"
                     data-social="instagram"
                     style={Colors.SocialMediaIcons}
@@ -255,7 +272,7 @@ const Footer = ({ Colors }) => {
           delay: 0.2,
           easings: "cubic-bezier(0.25, 1, 0.5, 1)",
         }}
-        className="text-gray-500 opacity-75 text-center"
+        className="text-gray-500 opacity-75 text-center font-Montserrat_Regular"
         style={Colors.ownOpacityPara}
       >
         © 2024 Shilok.K | All rights reserved

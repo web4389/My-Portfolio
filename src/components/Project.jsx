@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import FindNewsMockUp from "../images/FindNewsMockup.png";
 import SocialMediaMockup from "../images/SocialMediaMockup.png";
 import TeslaMockup from "../images/TeslaMockup.png";
 import { useDarkMode } from "../components/DarkModeContext";
+import Design from "../images/Design.svg";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -78,13 +78,26 @@ const ProjectSection = ({ Colors }) => {
           delay: 0.3,
         }}
       >
-        <h2 className="text-4xl font-bold text-gray-800" style={Colors.h1}>
+                   <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+              transition={{ type: "spring", duration: 0.6, delay:0.3 }}
+              src={Design}
+              alt="Design"
+              className={`md:w-[110px] max-md:w-[80px] absolute mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} max-md:right-[10%] md:ml-[53%] max-lg:-mt-[55px] lg:-mt-[90px]`}
+              id="Design"
+            />
+        <h2 className="text-4xl font-bold text-gray-800  after:content-[''] after:absolute after:translate-x-[-50%] after:h-[5px] after:w-[2rem] after:left-[50%] after:mt-[3.2rem] after:rounded-[5px] pb-6 after:bg-orange-500" style={Colors.h1}>
           Projects
         </h2>
-        <p className="text-gray-700 sm:px-28 mb-16 mt-4 px-5" style={Colors.p}>
+        <div className="text-center flex justify-center w-[100%]">
+          
+        <p className="text-gray-700 sm:px-28 mb-16 mt-4 px-5 lg:max-w-[70%] max-lg:max-w-[90%] text-center" style={Colors.p}>
           With these projects, I've gained a deeper understanding of both
           Frontend and Backend development
         </p>
+        </div>
       </motion.div>
       <div className="grid grid-cols-1 gap-x-10 max-md:gap-y-20 md:gap-y-24 px-5 place-items-center">
         {projects.map((project, index) => (
@@ -98,7 +111,7 @@ const ProjectSection = ({ Colors }) => {
               delay: 0.4,
             }}
             key={index}
-            className={`flex ${project.rowDir} max-md:flex-col max-lg:gap-x-24 lg:gap-x-32 gap-y-5 items-center justify-between max-lg:max-w-[95%] lg:max-w-[70%]`}
+            className={`flex ${project.rowDir} max-md:flex-col max-lg:gap-x-24 lg:gap-x-32 gap-y-5 items-center justify-between max-lg:max-w-[95%]`}
           >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -143,7 +156,7 @@ const ProjectSection = ({ Colors }) => {
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="text-sm transition duration-150 font-medium bg-white shadow-lg px-3 py-1 rounded-full  hover:scale-105 hover:bg-[#f7f6f6] cursor-pointer"
+                    className={`text-sm transition duration-150 font-medium bg-white shadow-lg px-3 py-1 ${darkMode?"hover:!bg-white hover:!text-gray-800":"hover:!bg-zinc-800 hover:!text-white"} rounded-full hover:scale-105 hover:bg-[#f7f6f6] cursor-pointer`}
                     style={Colors.ProjectTech}
                   >
                     {tech}

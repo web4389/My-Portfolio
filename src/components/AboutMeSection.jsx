@@ -1,46 +1,67 @@
-import React, { useEffect } from "react";
-import MyPic from "../images/MyPicForFirstSection.png";
+import MyPicLight from "../images/MyPicForAboutSecLightMode.jpg";
+import MyPicDark from "../images/MyPicForAboutSecDarkMode.jpg";
 import { motion } from "framer-motion";
 import "../css/about.css";
 import { useDarkMode } from "../components/DarkModeContext";
-import Services from "./Services";
+import Arrow from "../images/Arrow.png";
+import Design from "../images/Design.svg";
+
 
 const AboutMe = ({ Colors }) => {
   const { darkMode } = useDarkMode();
   return (
     <section
-      className="max-lg:py-20 lg:py-36 font-poppins_Regular"
+      className="max-lg:py-20 lg:py-36 con overflow-hidden font-poppins_Regular"
       style={Colors.bg}
       id="about"
     >
-      <motion.div
-        className="text-center pb-28"
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, ease: "linear" }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-4xl font-bold mb-[19px]" style={Colors.h1}>
-        About Me
-        </h2>
-        <p className="mt-4 max-md:px-5 md:px-12 lg:px-20" style={Colors.p}>Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
-        </p>
-      </motion.div>
-      {/* About Me Content */}
-      <div className=" max-lg:flex-col lg:px-12 flex gap-x-8 justify-center items-center lg:justify-between">
+      <div className="w-[100%] mx-auto flex flex-col justify-center items-center lg:flex-row max-lg:gap-y-6 lg:gap-20">
+        <div className="max-md:w-[90%] flex justify-center">
+          <motion.img
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2, ease: "linear", delay: 0 }}
+            src={darkMode?MyPicDark:MyPicLight}
+            alt="Profile"
+            className="lg:w-[340px] max-lg:w-[320px]"
+          />
+           <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+              transition={{ type: "spring", duration: 0.3, delay:0.3 }}
+              src={Design}
+              alt="Design"
+              className={`md:w-[110px] max-md:w-[80px] absolute max-md:right-[10%] mix-blend-difference ${darkMode?'!opacity-100':"!opacity-75"} md:ml-[200px] max-md:-mt-[30px] md:-mt-[60px]`}
+              id="Design"
+            />
+        </div>
+
+        {/* About Me Content */}
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "linear", delay: 0.5 }}
-          className="text-center lg:text-left max-sm:px-3 flex flex-col justify-center items-center gap-y-[15px] lg:w-[87%] pb-16"
+          className="text-center lg:text-left max-sm:px-3 max-sm:w-auto max-lg:w-[65%] lg:max-w-[44%]"
         >
-          <h2 className="text-3xl font-bold text-center" style={Colors.h1}>
-          Get to know me!
+                <motion.img
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+              transition={{ type: "spring", duration: 0.7,}}
+              src={Arrow}
+              alt="Arrow"
+              className="md:w-[70px] max-md:w-[50px] absolute max-lg:right-[10%] lg:ml-[200px] max-lg:-mt-[40px] lg:-mt-[70px]"
+              id="Arrow"
+            />
+          <h2 className="text-4xl font-bold mb-[19px] pb-6 after:content-[''] after:absolute after:h-[5px] after:w-[2rem] after:-ml-[105px] after:mt-[3.2rem] after:rounded-[5px] after:bg-orange-500" style={Colors.h1}>
+            About Me
           </h2>
-          <div className="opacity-90 max-sm:w-auto max-lg:w-[65%] lg:max-w-[93%] text-center" style={Colors.p}>
+          <div className="opacity-90" style={Colors.p}>
             <p className="mt-4">
-              I'm a Mern Stack Developer who builds and manages the Frontend &
+              I'm a Mern Stack Developer Where i builds and manages the Frontend &
               Backend of Websites and Web Applications led to the success of the
               overall product
             </p>
@@ -48,15 +69,11 @@ const AboutMe = ({ Colors }) => {
                My journey in the world of coding started in 2020. As of now, I
               am learning coding and can make any kind of website, & can manage
               both front-ends and backends. & Now I am fully prepared for any
-              job or any other opportunity.
-            </p>
-            <p className="mt-4">
-              I'm open to Job opportunities where I can contribute, learn and
-              grow. If you have a good opportunity that matches my skills and
-              experience then don't hesitate to contact me.
+              job or any other opportunity, Feel free to reach me out.
             </p>
           </div>
           <div className="flex items-center mt-6 gap-x-4 max-lg:justify-center">
+          <a href="https://www.linkedin.com/in/shilok-k/" target="_blank">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -65,9 +82,12 @@ const AboutMe = ({ Colors }) => {
                   ? "hover:bg-white text-white hover:text-gray-800"
                   : "hover:bg-[#252a30] text-white"
               } transition duration-300 bg-[#fdb12f] font-semibold rounded-full`}
+          
             >
               Hire Me
             </motion.button>
+            </a>
+
             <p
               className="opacity-55 max-md:hidden"
               style={Colors.ownOpacityPara}
@@ -78,10 +98,13 @@ const AboutMe = ({ Colors }) => {
               <ul className="example-2">
                 <li className="icon-content">
                   <a
-                    href="https://linkedin.com/"
-                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/in/shilok-k/"
+          target="_blank"
+          aria-label="LinkedIn"
+
                     data-social="linkedin"
                     style={Colors.SocialMediaIcons}
+
                   >
                     <div className="filled"></div>
                     <svg
@@ -103,7 +126,8 @@ const AboutMe = ({ Colors }) => {
                 </li>
                 <li className="icon-content">
                   <a
-                    href="https://www.github.com/"
+                    href="https://github.com/web4389"
+          target="_blank"
                     aria-label="GitHub"
                     data-social="github"
                     className={`${
@@ -134,7 +158,9 @@ const AboutMe = ({ Colors }) => {
                 </li>
                 <li className="icon-content">
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/codewithshilok9/"
+          target="_blank"
+
                     aria-label="Instagram"
                     data-social="instagram"
                     style={Colors.SocialMediaIcons}
@@ -161,7 +187,6 @@ const AboutMe = ({ Colors }) => {
             </div>
           </div>
         </motion.div>
-        <Services Colors={Colors} />
       </div>
     </section>
   );

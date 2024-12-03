@@ -6,6 +6,10 @@
   font-family: "POPPINS-REGULAR";
   src: url(/public/Fonts/Poppins-Regular.ttf);
 }
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(/public/Fonts/Montserrat-Regular.ttf);
+}
 
 h1,
 h2,
@@ -32,6 +36,13 @@ button {
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+img{
+  transition-property: color, background-color, border-color,
+  text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+  backdrop-filter;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 500ms;
 }
 #MyPics:hover {
   box-shadow: 2.1px 2.6px 33.6px rgba(0, 0, 0, 0.052),
