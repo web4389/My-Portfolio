@@ -61,8 +61,8 @@ const AboutMe = ({ Colors }) => {
           </h2>
           <div className="opacity-90" style={Colors.p}>
             <p className="mt-4">
-              I'm a Mern Stack Developer Where i builds and manages the Frontend &
-              Backend of Websites and Web Applications led to the success of the
+              I'm a Mern Stack Developer Where I build and manage the Frontend &
+              Backend of Websites and Web Applications that led to the success of the
               overall product
             </p>
             <p className="mt-4">
